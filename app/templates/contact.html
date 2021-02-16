@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block main %}
+
+<h1>Contact Form</h1>
+<hr />
+<p>Fill in this form to contact the site owners.</p>
+<div class="form">
+  <form action="/process" method="POST">
+    {{ form.csrf_token }} 
+    {{ form.name.label }} 
+    {{ form.name(size = 20)}} 
+    {{form.email.label }} 
+    {{ form.email(size = 50)}} 
+    {{ form.subject.label}} 
+    {{ form.subject(size = 20)}} 
+    {{ form.body.label }} 
+    {{ form.body(size = 225) }}
+    <button class="btn" type="submit">Send</button>
+  </form>
+</div>
+
+{% endblock %}
